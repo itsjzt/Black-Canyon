@@ -1,15 +1,14 @@
 const express = require('express')
 const app = express()
 const useragent = require('express-useragent')
-const getIP = require('ipware')().get_ip;
 
 app.use(useragent.express())
 
 app.get('/', function(req, res) {
   const { os, browser } = req.useragent
-  const { clientIp } = getIP(req)
+  const ip = req.ip
 
-  res.json( {os, browser, clientIp} )
+  res.json( {os, browser, ip} )
 });
 
 const port = process.env.PORT || 4567
