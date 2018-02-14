@@ -12,4 +12,4 @@ app.get('/', function(req, res) {
 });
 
 const port = process.env.PORT || 4567
-app.listen(4567, () => console.log(`listening on ${port}`))
+app.listen(port, () => console.log(`listening on ${port}`))
